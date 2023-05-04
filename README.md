@@ -15,12 +15,17 @@ You'll need `docker-compose`.
 
 (already happening, just refresh the page)
 
-![view](localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax)
+![view](http://localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax&page=os-pixel-data)
 
-### Hit a named, schematized pixel when a thing is clicked:
+### Hit the pixel with an arbitrary payload:
 
-[localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax](http://localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax)
+Track [localhost:8080/pixel?msg=hello&subject=world&location=buzwax](http://localhost:8080/pixel?msg=hello&subject=world&location=buzwax)
 
 ### Hit a named, schematized pixel and redirect to a link:
 
-[localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax&rto=https://bytewax.io/](http://localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax&rto=https://bytewax.io/)
+Track and [redirect to bytewax.io](http://localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&link=thisone&location=buzwax&rto=https://bytewax.io/)
+
+
+### Inspect the payloads:
+
+using the [Redpanda Console](http://localhost:8082/topics)
