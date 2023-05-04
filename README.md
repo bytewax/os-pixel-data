@@ -19,8 +19,8 @@ You'll need `docker-compose`.
 
 ### Hit a named, schematized pixel when a thing is clicked:
 
-[localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax](localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax)
+[localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax](http://localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax)
 
 ### Hit a named, schematized pixel and redirect to a link:
 
-[localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax&rto=https://bytewax.io/](localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax&rto=https://bytewax.io/)
+[localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax&rto=https://bytewax.io/](http://localhost:8080/pixel/io.silverton/buz/pixel/linkClick/v1.0?msg=hello&subject=world&location=buzwax&rto=https://bytewax.io/)
