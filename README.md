@@ -13,9 +13,9 @@ You'll need `docker-compose`.
 
 ### Track a README view
 
-()(already happening, just refresh the page)
+(already happening, just refresh the page)
 
-![view][localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax]
+![view](localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax)
 
 ### Hit a named, schematized pixel when a thing is clicked:
 
