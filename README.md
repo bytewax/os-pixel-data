@@ -11,11 +11,9 @@ You'll need `docker-compose`.
 
 ## Once `redpanda`, `buz`, and the `console` are running you can:
 
-### Track a README view
+### Track a README view:
 
-(already happening, just refresh the page)
-
-![view](http://localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax&page=os-pixel-data)
+By sourcing the [pixel like this](http://localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax&page=os-pixel-data).
 
 ### Hit the pixel with an arbitrary payload:
 
