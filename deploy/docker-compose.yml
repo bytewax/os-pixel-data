@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  redpanda:
+    container_name: redpanda
+    image: docker.vectorized.io/vectorized/redpanda:latest
+    command:
+      - redpanda start
+      - --overprovisioned
+      - --check=false
+      - --smp 1
+      - --memory 1G
+      - --reserve-memory 0M
+      - --node-id 0
+      - --kafka-addr
+      - INSIDE://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092
+      - --advertise-kafka-addr
+      - INSIDE://redpanda:29092,OUTSIDE://127.0.0.1:9092
+      - --rpc-addr 0.0.0.0:33145
+      - --advertise-rpc-addr redpanda:33145
+      - --set redpanda.enable_transactions=true
+      - --set redpanda.enable_idempotence=true
+    ports:
+      - 9092:9092
+    healthcheck:
+      test: curl -f localhost:9644/v1/status/ready
+      interval: 1s
+      start_period: 30s
+
+  buz:
+    container_name: buz
+    image: ghcr.io/silverton-io/buz:v0.16.5
+    volumes:
+      - type: bind
+        source: ./buz/config.yml
+        target: /etc/buz/config.yml
+      - type: bind
+        source: ./buz/schemas
+        target: /schemas/
+    environment:
+      - BUZ_CONFIG_PATH=/etc/buz/config.yml
+      - DEBUG=1
+    ports:
+      - 8080:8080
+    deploy:
+      restart_policy:
+        condition: on-failure
+    healthcheck:
+      test: ./healthcheck --host=localhost --port=8080 --path=/health
+      interval: 1s
+    depends_on:
+      redpanda:
+        condition: service_healthy
+
+  console:
+    image: docker.redpanda.com/vectorized/console:latest
+    restart: on-failure
+    container_name: console
+    environment:
+      - KAFKA_BROKERS=redpanda:29092
+    ports:
+    - 8082:8080
