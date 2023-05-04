@@ -13,7 +13,7 @@ You'll need `docker-compose`.
 
 ### Track a README view:
 
-By sourcing the [pixel like this](http://localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax&page=os-pixel-data).
+By sourcing a named, schematized pixel: [localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax&page=os-pixel-data](http://localhost:8080/pixel/io.silverton/buz/pixel/pageView/v1.0?msg=hello&subject=world&location=buzwax&page=os-pixel-data).
 
 ### Hit the pixel with an arbitrary payload:
 
