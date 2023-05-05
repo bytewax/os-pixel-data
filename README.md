@@ -27,3 +27,12 @@ Track and [redirect to bytewax.io](http://localhost:8080/pixel/io.silverton/buz/
 ### Inspect the payloads:
 
 using the [Redpanda Console](http://localhost:8082/topics)
+
+### Processing the data
+
+Once you have sent some example pixel requests you can run the Bytewax dataflow to process them. 
+
+```
+pip install -r requirements.txt
+python -m bytewax.run deploy.data-pipelines.dataflow:flow
+```
